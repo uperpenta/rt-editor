@@ -10,6 +10,37 @@ import {
 
 export const createTable = pgTableCreator((name) => `pg-drizzle_${name}`);
 
+export const documents = createTable(
+  "document",
+  (d) => ({
+    id: d.text().primaryKey(),
+    ySweetDocId: d.text("y_sweet_doc_id").notNull().unique(),
+    title: d.varchar({ length: 500 }).notNull().default("Untitled Document"),
+    description: d.text(),
+    ownerId: d
+      .text("owner_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    deletedAt: d.timestamp("deleted_at", { withTimezone: true }), // support for soft delete - recover feature
+    createdAt: d
+      .timestamp("created_at", { withTimezone: true })
+      .$defaultFn(() => new Date())
+      .notNull(),
+    updatedAt: d
+      .timestamp("updated_at", { withTimezone: true })
+      .$defaultFn(() => new Date())
+      .notNull(),
+    lastAccessedAt: d
+      .timestamp("last_accessed_at", { withTimezone: true })
+      .$defaultFn(() => new Date()),
+  }),
+  (t) => [
+    index("document_owner_idx").on(t.ownerId),
+    index("document_deleted_at_idx").on(t.deletedAt),
+    index("document_last_accessed_idx").on(t.lastAccessedAt),
+  ],
+);
+
 export const posts = createTable(
   "post",
   (d) => ({
