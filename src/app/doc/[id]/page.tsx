@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { QuillEditor } from "./EditorClient";
 import { getSession } from "~/server/better-auth/server";
+import { api } from "~/trpc/server";
 
 export default async function DocumentPage({
   params,
@@ -18,10 +19,14 @@ export default async function DocumentPage({
 
   const { id: docId } = await params;
 
+  try {
+    await api.document.getById({ id: docId });
+  } catch {
+    redirect("/dashboard");
+  }
+
   async function getClientToken() {
     "use server";
-
-    const { ySweetManager } = await import("~/server/ysweet");
 
     const session = await getSession();
 
@@ -29,6 +34,13 @@ export default async function DocumentPage({
       throw new Error("Unauthorized");
     }
 
+    try {
+      await api.document.getById({ id: docId });
+    } catch {
+      throw new Error("Unauthorized: Document not found or access denied");
+    }
+
+    const { ySweetManager } = await import("~/server/ysweet");
     const token = await ySweetManager.getOrCreateDocAndToken(docId);
 
     // Fix the URL to include port 8080 - CHANGE FOR PRODUCTION - no need for port :P
@@ -47,7 +59,6 @@ export default async function DocumentPage({
 
   return (
     <div className="flex h-screen flex-col">
-      {/* Header with back button */}
       <header className="flex items-center gap-4 border-b bg-white px-4 py-3">
         <Link
           href="/dashboard"
@@ -70,7 +81,6 @@ export default async function DocumentPage({
         </Link>
       </header>
 
-      {/* Editor */}
       <div className="flex-1 overflow-hidden">
         <YDocProvider docId={docId} authEndpoint={getClientToken}>
           <QuillEditor />
