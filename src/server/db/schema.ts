@@ -1,3 +1,4 @@
+import { randomUUID } from "crypto";
 import { relations } from "drizzle-orm";
 import {
   boolean,
@@ -13,8 +14,7 @@ export const createTable = pgTableCreator((name) => `pg-drizzle_${name}`);
 export const documents = createTable(
   "document",
   (d) => ({
-    id: d.text().primaryKey(),
-    ySweetDocId: d.text("y_sweet_doc_id").notNull().unique(),
+    id: d.text().primaryKey().$defaultFn(() => randomUUID()) ,// Y-Sweet document ID used as primary key
     title: d.varchar({ length: 500 }).notNull().default("Untitled Document"),
     description: d.text(),
     ownerId: d

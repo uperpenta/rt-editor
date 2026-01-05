@@ -16,4 +16,17 @@ export const documentRouter = createTRPCRouter({
       .where(eq(documents.ownerId, ctx.session.user.id));
     return documentList;
   }),
+  create: protectedProcedure
+      .input(z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const [newDoc] = await ctx.db.insert(documents).values({
+          title: input.title,
+          description: input.description,
+          ownerId: ctx.session.user.id,
+        }).returning();
+        return newDoc;
+      }),
 });
