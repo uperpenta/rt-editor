@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import { getSession } from "~/server/better-auth/server";
 import { api } from "~/trpc/server";
-import { CreateDocumentButton } from "~/app/_components/dashboard/create-document-button";
-import { DocumentList } from "~/app/_components/dashboard/document-list";
+import { CreateDocumentButton } from "~/app/_components/dashboard/CreateDocumentButton";
+import { DocumentList } from "~/app/_components/dashboard/DocumentsList";
 
 export default async function DashboardPage() {
   const session = await getSession();
