@@ -1,29 +1,47 @@
-# Create T3 App
+**Real-Time Collaborative Editor**
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+A collaborative document editor built with Next.js and CRDTs for conflict-free real-time editing.
+What It Does
+Multiple users can edit the same document simultaneously without conflicts. Changes sync in real-time, and you can see other people's cursors as they type.
 
-## What's next? How do I make an app with this?
+**Tech Stack**
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+**Core**
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- Next.js 16 (App Router)
+- TypeScript
+- PostgreSQL
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+**Real-Time Collaboration**
 
-## Learn More
+- Y-Sweet & Yjs (CRDT sync)
+- Quill (rich text editor)
+- WebSockets
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+**Auth & API**
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- Better Auth
+- tRPC (type-safe API)
+- Drizzle ORM
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+**UI**
 
-## How do I deploy this?
+- Tailwind CSS v4
+- Framer Motion
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+**Features**
+
+Current
+
+- Real-time collaborative editing
+- Multi-user cursor tracking
+- Rich text formatting (headers, lists, code blocks, images)
+- Document management dashboard
+- GitHub/Discord login
+
+Planned
+
+- AI writing assistance (grammar, autocomplete, suggestions)
+- Export to PDF, Word, Markdown, LaTeX
+- Comments and version history
+- Granular sharing permissions
