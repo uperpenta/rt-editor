@@ -11,7 +11,7 @@ export default async function Home() {
   const session = await getSession();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-landing-mint via-landing-apricot to-landing-lavender">
+    <div className="from-landing-mint via-landing-apricot to-landing-lavender min-h-screen bg-linear-to-br">
       <LandingHeader session={session} />
       <HeroSection session={session} />
       <FeaturesGrid />
