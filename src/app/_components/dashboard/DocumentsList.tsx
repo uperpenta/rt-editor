@@ -43,7 +43,7 @@ export function DocumentList({ documents }: DocumentListProps) {
           className="group block rounded-lg border border-gray-200 bg-white p-4 transition-all hover:border-blue-500 hover:shadow-md"
         >
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <div className="flex h-12 w-10 items-center justify-center rounded bg-blue-50">
                 <svg
                   className="h-6 w-6 text-blue-600"
@@ -77,7 +77,7 @@ export function DocumentList({ documents }: DocumentListProps) {
               </div>
             </div>
 
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <button className="rounded-full p-2 opacity-0 transition-opacity group-hover:opacity-100 hover:bg-gray-100">
                 <svg
                   className="h-5 w-5 text-gray-600"
