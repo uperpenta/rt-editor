@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
 @import "tailwindcss";
 @import "quill/dist/quill.snow.css";
 
@@ -44,14 +45,14 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Landing Page Colors */
---landing-mint: #ffcf62;
---landing-mint-hover: #f7fc4f;
---landing-mint-dark: #8B7A2D;
---landing-coral: #ffb4a2;
---landing-coral-hover: #FF9E89;
---landing-apricot: #f099b3;
---landing-lavender: #e38fe8;
---landing-lavender-dark: #9A4BA0;
+  --landing-mint: #ffcf62;
+  --landing-mint-hover: #f7fc4f;
+  --landing-mint-dark: #8b7a2d;
+  --landing-coral: #ffb4a2;
+  --landing-coral-hover: #ff9e89;
+  --landing-apricot: #f099b3;
+  --landing-lavender: #e38fe8;
+  --landing-lavender-dark: #9a4ba0;
 }
 
 .dark {
@@ -155,6 +156,8 @@
   --color-landing-apricot: var(--landing-apricot);
   --color-landing-lavender: var(--landing-lavender);
   --color-landing-lavender-dark: var(--landing-lavender-dark);
+  
+  --font-knewave: "Knewave", system-ui;
 }
 
 @layer base {

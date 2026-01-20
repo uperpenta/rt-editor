@@ -13,20 +13,20 @@ export function CTASection({ session }: CTASectionProps) {
           Ready to start collaborating?
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-700">
-          Join writers already using Writing Space to work better together
+          Join writers already using Lettucy to work better together
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           {session ? (
             <a
               href="/dashboard"
-              className="inline-block rounded-full bg-landing-mint px-8 py-4 text-gray-900 transition-colors hover:bg-landing-coral-hover"
+              className="bg-landing-mint hover:bg-landing-coral-hover inline-block rounded-full px-8 py-4 text-gray-900 transition-colors"
             >
               Go to Dashboard
             </a>
           ) : (
             <form>
               <button
-                className="rounded-full bg-landing-mint px-8 py-4 text-gray-900 transition-colors hover:bg-landing-mint-hover"
+                className="bg-landing-mint hover:bg-landing-mint-hover rounded-full px-8 py-4 text-gray-900 transition-colors"
                 formAction={handleDiscordSignIn}
               >
                 Get Started
