@@ -53,6 +53,7 @@
   --landing-apricot: #f099b3;
   --landing-lavender: #e38fe8;
   --landing-lavender-dark: #9a4ba0;
+  --landing-lettuce-green: #4e45d1;
 }
 
 .dark {
@@ -156,7 +157,8 @@
   --color-landing-apricot: var(--landing-apricot);
   --color-landing-lavender: var(--landing-lavender);
   --color-landing-lavender-dark: var(--landing-lavender-dark);
-  
+  --color-landing-lettuce-green: var(--landing-lettuce-green);
+
   --font-knewave: "Knewave", system-ui;
 }
 

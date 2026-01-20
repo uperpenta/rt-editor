@@ -1,5 +1,6 @@
 import type { Session } from "~/server/better-auth/config";
 import { handleDiscordSignIn } from "~/app/_actions/auth";
+import { Button } from "../Button";
 
 interface HeroSectionProps {
   session: Session | null;
@@ -21,29 +22,31 @@ export function HeroSection({ session }: HeroSectionProps) {
           </p>
           <div className="flex items-center gap-4 pt-4">
             {session ? (
-              <a
+              <Button
+                bg="bg-gray-800"
+                text="text-gray-100"
+                hover="hover:bg-landing-lavender-dark"
                 href="/dashboard"
-                className="inline-block rounded-full bg-black px-8 py-3 text-white transition-colors hover:bg-landing-coral-hover "
               >
                 Go to Dashboard
-              </a>
+              </Button>
             ) : (
-              <form>
-                <button
-                  className="rounded-full bg-landing-coral px-8 py-3 text-gray-900 transition-colors hover:bg-landing-coral-hover"
-                  formAction={handleDiscordSignIn}
-                >
-                  Get Started
-                </button>
-              </form>
+              <Button
+                bg="bg-gray-800"
+                text="text-gray-100"
+                hover="hover:bg-landing-lavender-dark"
+                formAction={handleDiscordSignIn}
+              >
+                Get Started
+              </Button>
             )}
           </div>
         </div>
         <div className="relative">
           <div className="h-64 overflow-hidden rounded-2xl border-4 border-white bg-white/40 shadow-2xl backdrop-blur-sm md:h-96" />
           {/* Floating elements */}
-          <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-landing-coral opacity-80" />
-          <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full border-4 border-landing-mint" />
+          <div className="bg-landing-coral absolute -top-4 -right-4 h-24 w-24 rounded-full opacity-80" />
+          <div className="border-landing-mint absolute -bottom-6 -left-6 h-32 w-32 rounded-full border-4" />
         </div>
       </div>
     </section>
