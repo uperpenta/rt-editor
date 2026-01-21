@@ -45,3 +45,8 @@ Planned
 - Export to PDF, Word, Markdown, LaTeX
 - Comments and version history
 - Granular sharing permissions
+
+Landing Page
+
+<img width="1228" height="992" alt="Screenshot from 2026-01-21 10-51-06" src="https://github.com/user-attachments/assets/5c36d73b-2341-474e-827e-c72749a5b31b" />
+
