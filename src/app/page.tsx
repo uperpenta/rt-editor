@@ -1,6 +1,6 @@
 import { getSession } from "~/server/better-auth/server";
 import {
-  LandingHeader,
+  Header,
   HeroSection,
   FeaturesGrid,
   CTASection,
@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <div className="from-landing-mint via-landing-apricot to-landing-lavender min-h-screen bg-linear-to-br">
-      <LandingHeader session={session} />
+      <Header session={session} />
       <HeroSection session={session} />
       <FeaturesGrid />
       <CTASection session={session} />
