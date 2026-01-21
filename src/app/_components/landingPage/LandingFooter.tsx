@@ -9,7 +9,7 @@ export function LandingFooter() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black">
               <Pencil className="h-5 w-5 text-gray-100" />
             </div>
-            <span className="text-xl text-gray-800">Lettucy</span>
+            <span className="text-xl text-gray-800">Lettuce Write</span>
           </div>
           <p className="text-sm text-gray-700">
             A collaborative writing app for writers
@@ -59,7 +59,7 @@ export function LandingFooter() {
         </div>
       </div>
       <div className="mt-12 border-t border-white/40 pt-8 text-center text-sm text-gray-700">
-        <p>&copy; 2026 Lettucy. All rights reserved.</p>
+        <p>&copy; 2026 Lettuce Write. All rights reserved.</p>
       </div>
     </footer>
   );
