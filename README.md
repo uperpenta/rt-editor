@@ -46,7 +46,18 @@ Planned
 - Comments and version history
 - Granular sharing permissions
 
-Landing Page
+**High Level Architecture**
+
+
+
+
+<img width="355" height="861" alt="mamasadasda drawio" src="https://github.com/user-attachments/assets/81031f77-b739-472e-a603-cdf04d81f738" />
+
+
+
+
+
+**Landing Page**
 
 <img width="1228" height="992" alt="Screenshot from 2026-01-21 10-51-06" src="https://github.com/user-attachments/assets/5c36d73b-2341-474e-827e-c72749a5b31b" />
 
